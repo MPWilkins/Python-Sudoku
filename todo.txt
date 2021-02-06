@@ -1,0 +1,2 @@
+1. Confirm that we have find values of "0"
+2. Create method to backtrace.
