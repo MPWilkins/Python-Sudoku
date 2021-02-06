@@ -27,6 +27,13 @@ def print_board(su):
                 print(su[i][k])
             else:
                 print(str(su[i][k]) + " ", end = "")
+            
+            
+def find_empty(su):
+    
+    for i in range(len(su)):
+        for k in range(len(su[0])):
+            if su[i][k] == 0:
+                return (i, k) # row, col
                 
-                
-print_board(board)
+# print_board(board)
