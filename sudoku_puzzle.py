@@ -12,7 +12,29 @@ board = [
 								   ]
 
 
-# sb = Sudoku Board
+def validate_board(sb, num, pos):
+    # Check Row
+    for i in range(len(sb[0])):
+        if sb[pos[0]][i] == num and pos[1] != i:
+            return False
+    
+    # Check Column
+    for i in range(len(sb[0])):
+        if sb[i][pos[0]] == num and pos[0] != i:
+            return False
+        
+    # Check 3x3 
+    box_x = pos[1] // 3
+    box_y = pos[0] // 3
+        
+    for i in range(box_y * 3, box_y * 3 + 3):
+        for j in range(box_x * 3, box_x * 3 + 3):
+            if sb[i][j] == num and (i,j) != pos:
+                    return False
+                
+    return True
+
+
 def print_board(sb):
     
     for i in range(len(sb)):
