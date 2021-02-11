@@ -25,7 +25,7 @@ def solve_sudoku(sb):
             if solve_sudoku(sb):
                 return True
             
-            sb[row][col]
+            sb[row][col] = 0
             
     return False
 
