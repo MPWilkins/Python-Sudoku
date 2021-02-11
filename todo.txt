@@ -1,2 +1,2 @@
-1. Confirm that we have find values of "0"
-2. Create method to backtrace.
+1. Understand what I learned from this project.
+2. Figure out how to create a randomized sudoku board.
