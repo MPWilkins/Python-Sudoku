@@ -11,6 +11,24 @@ board = [
 		[0, 4, 9, 2, 0, 6, 0, 0, 7]
 								   ]
 
+def solve_sudoku(sb):
+    find = find_empty(sb)
+    if not find:
+        return True
+    else:
+        row, col = find
+        
+    for i in range(1, 10):
+        if validate_board(sb, i, (row, col)):
+            sb[row][col] = i
+            
+            if solve_sudoku(sb):
+                return True
+            
+            sb[row][col]
+            
+    return False
+
 
 def validate_board(sb, num, pos):
     # Check Row
@@ -57,5 +75,10 @@ def find_empty(sb):
         for k in range(len(sb[0])):
             if sb[i][k] == 0:
                 return (i, k) # row, col
+            
+    return None
                 
-# print_board(board)
+print_board(board)
+solve_sudoku(board)
+print("______________________________")
+print_board(board)
